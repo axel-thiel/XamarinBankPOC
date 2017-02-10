@@ -20,14 +20,13 @@ import com.xamarinpocbanque.server.dto.UserDTO;
 import com.xamarinpocbanque.server.entity.User;
 import com.xamarinpocbanque.server.filter.UserService;
 
-import antlr.collections.List;
-
 @RestController
 @RequestMapping(value="/xambank/user")
 public class UserFacade {
 
 	@Resource
-	private UserService userService;
+	private UserService userService; 
+	
 
 	
 	 /**
