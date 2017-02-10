@@ -27,6 +27,7 @@ public class UserFacade {
 	@Resource
 	private UserService userService; 
 	
+	
 
 	
 	 /**
