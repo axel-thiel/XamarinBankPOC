@@ -8,6 +8,5 @@ public class XamarinPocBankServerApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(XamarinPocBankServerApplication.class, args);
-		
 	}
 }
