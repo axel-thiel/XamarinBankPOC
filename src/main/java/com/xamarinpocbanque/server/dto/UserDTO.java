@@ -13,7 +13,19 @@ public class UserDTO {
     private int phone;
     private int bankId;
     
-    
+	public UserDTO(Long id, String lastName, Long firstName, Long login, Long password, String email, int phone,
+			int bankId) {
+		super();
+		this.id = id;
+		this.lastName = lastName;
+		this.firstName = firstName;
+		this.login = login;
+		this.password = password;
+		this.email = email;
+		this.phone = phone;
+		this.bankId = bankId;
+	}
+	
 	public Long getId() {
 		return id;
 	}

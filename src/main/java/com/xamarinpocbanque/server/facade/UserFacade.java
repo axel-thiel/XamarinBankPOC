@@ -1,15 +1,10 @@
 package com.xamarinpocbanque.server.facade;
 
-import static org.hamcrest.CoreMatchers.nullValue;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.log;
-
 import javax.annotation.Resource;
 import javax.validation.Valid;
 
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,8 +23,6 @@ public class UserFacade {
 	private UserService userService; 
 	
 	
-
-	
 	 /**
     *
     * POST. log user.
@@ -46,11 +39,13 @@ public class UserFacade {
 	   User user = userService.findByLoginAndPassword(loginDto.getLogin(), loginDto.getPassword());
 	   
 	   if (user != null) {
-		UserDTO userDTO = new UserDTO();
-		userDTO.setId(user.getId());
-	}
+		UserDTO userDTO = new UserDTO(user.getId(), user.getLastName(), user.getFirstName(), null, null, user.getEmail(), user.getPhone(), user.getBankId());
+		return ResponseEntity.ok(userDTO);
+		
+	   }else {
+		return null;
+	   	}
 	   
-	   return null;
    }
 	
 }
