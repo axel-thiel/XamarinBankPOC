@@ -1,26 +1,21 @@
 package com.xamarinpocbanque.server.dto;
 
-import javax.persistence.Column;
 
 public class UserDTO {
 	
 	private Long id;
     private String lastName;
-    private Long firstName;
-    private Long login;
-    private Long password;
+    private String firstName;
     private String email ;
-    private int phone;
-    private int bankId;
+    private String phone;
+    private Long bankId;
     
-	public UserDTO(Long id, String lastName, Long firstName, Long login, Long password, String email, int phone,
-			int bankId) {
+	public UserDTO(Long id, String lastName, String firstName, String email, String phone,
+			Long bankId) {
 		super();
 		this.id = id;
 		this.lastName = lastName;
 		this.firstName = firstName;
-		this.login = login;
-		this.password = password;
 		this.email = email;
 		this.phone = phone;
 		this.bankId = bankId;
@@ -38,23 +33,11 @@ public class UserDTO {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	public Long getFirstName() {
+	public String getFirstName() {
 		return firstName;
 	}
-	public void setFirstName(Long firstName) {
+	public void setFirstName(String firstName) {
 		this.firstName = firstName;
-	}
-	public Long getLogin() {
-		return login;
-	}
-	public void setLogin(Long login) {
-		this.login = login;
-	}
-	public Long getPassword() {
-		return password;
-	}
-	public void setPassword(Long password) {
-		this.password = password;
 	}
 	public String getEmail() {
 		return email;
@@ -62,16 +45,16 @@ public class UserDTO {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public int getPhone() {
+	public String getPhone() {
 		return phone;
 	}
-	public void setPhone(int phone) {
+	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	public int getBankId() {
+	public Long getBankId() {
 		return bankId;
 	}
-	public void setBankId(int bankId) {
+	public void setBankId(Long bankId) {
 		this.bankId = bankId;
 	}
     

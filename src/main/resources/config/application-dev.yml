@@ -1,8 +1,8 @@
 spring:
     datasource:
-      url: jdbc:postgresql://localhost:5432/xamarinpocbanque
-      username: xamarinpocbanque
-      password: xamarinpocbanque
+      url: jdbc:postgresql://localhost:5432/xambanque
+      username: xambanque
+      password: xambanque
       driverClassName: org.postgresql.Driver
     jpa:
         database-platform: org.hibernate.dialect.PostgreSQLDialect

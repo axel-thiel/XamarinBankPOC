@@ -20,7 +20,7 @@ public class User {
     private String lastName;
 
     @Column(name = "first_name")
-    private Long firstName;
+    private String firstName;
 
     
     @Column(name = "login")
@@ -33,10 +33,10 @@ public class User {
     private String email ;
     
     @Column(name = "phone")
-    private int phone;
+    private String phone;
     
     @Column(name= "bank_id")
-    private int bankId;
+    private Long bankId;
     
     
 
@@ -56,11 +56,11 @@ public class User {
 		this.lastName = lastName;
 	}
 
-	public Long getFirstName() {
+	public String getFirstName() {
 		return firstName;
 	}
 
-	public void setFirstName(Long firstName) {
+	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
 
@@ -88,19 +88,19 @@ public class User {
 		this.email = email;
 	}
 
-	public int getPhone() {
+	public String getPhone() {
 		return phone;
 	}
 
-	public void setPhone(int phone) {
+	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 
-	public int getBankId() {
+	public Long getBankId() {
 		return bankId;
 	}
 
-	public void setBankId(int bankId) {
+	public void setBankId(Long bankId) {
 		this.bankId = bankId;
 	}
             

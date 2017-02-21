@@ -39,7 +39,7 @@ public class UserFacade {
 	   User user = userService.findByLoginAndPassword(loginDto.getLogin(), loginDto.getPassword());
 	   
 	   if (user != null) {
-		UserDTO userDTO = new UserDTO(user.getId(), user.getLastName(), user.getFirstName(), null, null, user.getEmail(), user.getPhone(), user.getBankId());
+		UserDTO userDTO = new UserDTO(user.getId(), user.getLastName(), user.getFirstName(), user.getEmail(), user.getPhone(), user.getBankId());
 		return ResponseEntity.ok(userDTO);
 		
 	   }else {
