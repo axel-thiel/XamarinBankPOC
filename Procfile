@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -jar target/dependency/application-prod.yml --port $PORT target/*.war
+web: java $JAVA_OPTS target/classes/config/application-prod.yaml --port $PORT target/*.war
