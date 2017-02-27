@@ -11,8 +11,8 @@ import javax.persistence.SequenceGenerator;
 public class User {
 
 	@Id
-    @SequenceGenerator(name = "mobithink_uid", sequenceName = "mobithink_uid", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "mobithink_uid")
+    @SequenceGenerator(name = "xambanque_uid", sequenceName = "xambanque_uid", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "xambanque_uid")
     @Column(name="id")
     private Long id;
 
