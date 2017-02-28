@@ -56,46 +56,109 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+		
+		<dependency>
+2
+   			 <groupId>com.github.jsimone</groupId>
+3
+   			 <artifactId>webapp-runner</artifactId>
+4
+   			 <version>7.0.27.1</version>
+5
+   			 <scope>provided</scope>
+6
+		</dependency>
+		
+		
+		
 	</dependencies>
 
 	<build>
 		<plugins>
-		
-			 <plugin>
-      			<groupId>com.heroku.sdk</groupId>
-    			  <artifactId>heroku-maven-plugin</artifactId>
-     				 <configuration>
-     			  		<processTypes>
-          					<web>java $JAVA_OPTS -cp target/classes:target/dependency/* Main</web>
-        				</processTypes>
-      				</configuration>
-    		</plugin>
     		
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 			
+			<plugin>
+4
+            <artifactId>maven-compiler-plugin</artifactId>
+5
+            <configuration>
+6
+                <source>1.6</source>
+7
+                <target>1.6</target>
+8
+            </configuration>
+9
+        </plugin>
+10
+        <plugin>
+11
+            <artifactId>maven-war-plugin</artifactId>
+12
+            <version>2.2</version>
+13
+        </plugin>
+14
+        <plugin>
+15
+            <groupId>org.apache.maven.plugins</groupId>
+16
+            <artifactId>maven-dependency-plugin</artifactId>
+17
+            <version>2.4</version>
+18
+            <executions>
+19
+                <execution>
+20
+                    <phase>package</phase>
+21
+                    <goals>
+22
+                        <goal>copy</goal>
+23
+                    </goals>
+24
+                    <configuration>
+25
+                        <artifactItems>
+26
+                            <artifactItem>
+27
+                                <groupId>com.github.jsimone</groupId>
+28
+                                <artifactId>webapp-runner</artifactId>
+29
+                                <version>7.0.27.1</version>
+30
+                                <destFileName>webapp-runner.jar</destFileName>
+31
+                            </artifactItem>
+32
+                        </artifactItems>
+33
+                    </configuration>
+34
+                </execution>
+35
+            </executions>
+36
+        </plugin>
+			
+			
 		</plugins>
+		
 		
 	</build>
 	
 	<profiles>
 	
-	<profile>
-    	<id>prod</id>
-    	<build>
-      		<plugins>
-        		<plugin>
-          			<groupId>com.heroku.sdk</groupId>
-          			<artifactId>heroku-maven-plugin</artifactId>
-          				<configuration>
-            				<appName>myapp-prod</appName>
-          				</configuration>
-        		</plugin>
-      		</plugins>
-    	</build>
-  	</profile>
-</profiles>
+	
+	</profiles>
 
 </project>
